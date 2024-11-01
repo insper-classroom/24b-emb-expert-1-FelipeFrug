@@ -19,24 +19,6 @@
 
 int BTN_PIN = 16;
 
-/* 
- * This include brings in static arrays which contain audio samples. 
- * if you want to know how to make these please see the python code
- * for converting audio samples into static arrays. 
- */
-#include "sample.h"
-int wav_position = 0;
-
-/*
- * PWM Interrupt Handler which output
-            adc_raw = adc_read(); // raw voltage from ADCs PWM level and advances the 
- * current sample. 
- * 
- * We repeat the same value for 8 cycles this means sample rate etc
- * adjust by factor of 8   (this is what bitshifting <<3 is doing)
- * 
- */
-
 int main(void) {
     /* Overclocking for fun but then also so the system clock is a 
      * multiple of typical audio sampling rates.
